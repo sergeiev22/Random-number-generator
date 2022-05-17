@@ -11,10 +11,12 @@ while True:
         break
     else:
         diff = num - user_input
-        if diff > 60:
+        if diff > 80:
             print("Not true. The number is much larger", user_input)
+        elif diff > 50:
+            print("Not true. The number is more larger", user_input)
         elif diff > 30:
-            print("Not true. The number is larger", user_input)
-        elif diff > 10:
-            print("Not true. The number is little much larger", user_input)
+            print("Not true. The number is little much larger", user_input) 
+        else:
+            print("Not true. Almost guessed", user_input)
         
