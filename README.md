@@ -3,7 +3,7 @@ import random
  
 print("Welcome to the game")
 num = random.randint(0, 100)
-max_tries = 15
+max_tries = 10
 user_tries = 0
 score = 100
  
@@ -12,7 +12,7 @@ while True:
     user_input = input("Guess the number (enter 'stop' for stop): ")
     
     if user_input == 'stop':
-        print("The number was %s" % num)
+        print("The number was - %s" % num)
         break
     
     try:
@@ -29,16 +29,24 @@ while True:
         break
     
     if num == user_input:
-        print("Congratulations! You guessed the number.")
+        print("\nCongratulations! You guessed the number.")
         print("Your score: %s" % (score * (max_tries - user_tries + 1) / (max_tries) ))
         break
     else:
         diff = num - user_input
-        if diff > 70:
-            print("Not true. The hidden number is much greater than %s" % user_input)
-        elif diff > 50:
-            print("Not true. The hidden number is greater than %s" % user_input)
+        if diff > 80:
+            print("Not true. Very cold %s" % user_input)
+        elif diff > 60:
+            print("Not true. Cold %s" % user_input)
+        elif diff > 40:
+             print("Not true. Zero  %s" % user_input)
+        elif diff > 20:
+             print("Not true. Warm %s" % user_input)
         elif diff > 10:
-             print("Not true. The hidden number is slightly more than %s" % user_input)
-        else:
-            print("Not true. Almost guessed %s" % user_input)
+             print("Not true. Very warm %s" % user_input)
+        elif diff > 5:
+             print("Not true. Hot %s" % user_input)
+        elif diff > 3:
+             print("Not true. Very hot %s" % user_input)
+        elif diff > 0:
+             print("Not true. Almost guessed %s" % user_input)
